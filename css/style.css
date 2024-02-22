@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+::selection{
+    background-color: rgba(255,255,255,0.3);
+    text-shadow: 0px 10px 0px rgb(0,0,0,0.1);
+}
+body{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #cfd1e1;
+    overflow: hidden;
+}
+.shadow{
+    top: 0;
+    position: absolute;
+    width: calc(100% + 50px);
+    left: -50px;
+    height: 300px;
+    background: linear-gradient(180deg,rgba(0,0,0,0.1),
+    transparent,transparent);
+    transform-origin: top;
+    transform: skew(45deg);
+    -webkit-transform: skew(45deg);
+    -moz-transform: skew(45deg);
+    -ms-transform: skew(45deg);
+    -o-transform: skew(45deg);
+    pointer-events: none;
+}
+.shadow::before{
+    content: '';
+    position: absolute;
+    left: -25px;
+    width: 50px;
+    height: 50px;
+    background: #cfd1e1;
+    transform: skew(-45deg);
+    -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+    -ms-transform: skew(-45deg);
+    -o-transform: skew(-45deg);
+    z-index: 1;
+}
+.serchBox{
+    position: relative;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 1s;
+
+}
+.serchBox:hover{
+    width: 400px;
+    transition-duration: .5s;
+}
+.serchBox:focus-within{
+    width: 400px;
+    transition-duration: .5s;
+}
+.serchBox::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(#fff,#fff,#e3e3e3);
+    z-index: 1;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+.serchBox::after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: -1px;
+    width: 10px;
+    height: 100%;
+    background: #9d9d9d;
+    z-index: 1;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+.serchBox input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px 40px 10px 20px;
+    outline:none;
+    font-size: 1.1em;
+    color: #555;
+    background: linear-gradient(#dbdae1,#a3aaba);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1),
+    15px 15px 15px rgba(0,0,0,0.1),
+    20px 20px 20px rgba(0,0,0,0.1),
+    30px 30px 30px rgba(0,0,0,0.1),
+    inset 1px 1px 2px #fff;
+}
+.btn{
+    position: absolute;
+    right: 20px;
+    color: #888;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
